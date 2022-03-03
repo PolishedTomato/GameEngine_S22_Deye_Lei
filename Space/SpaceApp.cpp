@@ -9,6 +9,15 @@ namespace Space
 	void SpaceApp::Run()
 	{
 		GAME_LOG("something..\n");
+		/*
+		if(!glfwInit())
+		{
+			GAME_LOG("GLFW failed to initialize");
+		}
+
+		GLFWwindow* window;
+		window = glfwCreatWindow(800,600, "game window", NULL, NULL);
+		*/
 		while (true)
 		{
 			OnUpdate();
