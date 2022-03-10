@@ -2,27 +2,25 @@
 //the precompile header file have to be place above
 #include "SpaceApp.h"
 
-
+#include "GameWindow.h"
 
 namespace Space
 {
 	void SpaceApp::Run()
 	{
-		GAME_LOG("something..\n");
-		/*
-		if(!glfwInit())
-		{
-			GAME_LOG("GLFW failed to initialize");
-		}
+		GAME_LOG("Its running..\n");
+		
+		Space::GameWindow::Init();
+		Space::GameWindow::GetWindow()->CreateWindow(800, 600, "game window");
 
-		GLFWwindow* window;
-		window = glfwCreatWindow(800,600, "game window", NULL, NULL);
-		*/
 		while (true)
 		{
 			OnUpdate();
+			
+			Space::GameWindow::GetWindow()->SwapBuffers();
+			Space::GameWindow::GetWindow()->CollectEvent();
 		}
-
+		
 	}
 	void SpaceApp::OnUpdate()
 	{

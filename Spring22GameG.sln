@@ -7,20 +7,40 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Spring22GameG", "Spring22Ga
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Space", "Space\Space.vcxproj", "{1F6CAD1D-CDDA-4556-BB7A-E035F02E07E5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glfw", "glfw\build\src\glfw.vcxproj", "{019C807C-4107-321D-AD10-934277A87E32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
+		MinSizeRel|x64 = MinSizeRel|x64
 		Release|x64 = Release|x64
+		RelWithDebInfo|x64 = RelWithDebInfo|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{46A20A5B-0317-4484-9537-96708AFF6497}.Debug|x64.ActiveCfg = Debug|x64
 		{46A20A5B-0317-4484-9537-96708AFF6497}.Debug|x64.Build.0 = Debug|x64
+		{46A20A5B-0317-4484-9537-96708AFF6497}.MinSizeRel|x64.ActiveCfg = Debug|x64
+		{46A20A5B-0317-4484-9537-96708AFF6497}.MinSizeRel|x64.Build.0 = Debug|x64
 		{46A20A5B-0317-4484-9537-96708AFF6497}.Release|x64.ActiveCfg = Release|x64
 		{46A20A5B-0317-4484-9537-96708AFF6497}.Release|x64.Build.0 = Release|x64
+		{46A20A5B-0317-4484-9537-96708AFF6497}.RelWithDebInfo|x64.ActiveCfg = Release|x64
+		{46A20A5B-0317-4484-9537-96708AFF6497}.RelWithDebInfo|x64.Build.0 = Release|x64
 		{1F6CAD1D-CDDA-4556-BB7A-E035F02E07E5}.Debug|x64.ActiveCfg = Debug|x64
 		{1F6CAD1D-CDDA-4556-BB7A-E035F02E07E5}.Debug|x64.Build.0 = Debug|x64
+		{1F6CAD1D-CDDA-4556-BB7A-E035F02E07E5}.MinSizeRel|x64.ActiveCfg = Debug|x64
+		{1F6CAD1D-CDDA-4556-BB7A-E035F02E07E5}.MinSizeRel|x64.Build.0 = Debug|x64
 		{1F6CAD1D-CDDA-4556-BB7A-E035F02E07E5}.Release|x64.ActiveCfg = Release|x64
 		{1F6CAD1D-CDDA-4556-BB7A-E035F02E07E5}.Release|x64.Build.0 = Release|x64
+		{1F6CAD1D-CDDA-4556-BB7A-E035F02E07E5}.RelWithDebInfo|x64.ActiveCfg = Release|x64
+		{1F6CAD1D-CDDA-4556-BB7A-E035F02E07E5}.RelWithDebInfo|x64.Build.0 = Release|x64
+		{019C807C-4107-321D-AD10-934277A87E32}.Debug|x64.ActiveCfg = Debug|x64
+		{019C807C-4107-321D-AD10-934277A87E32}.Debug|x64.Build.0 = Debug|x64
+		{019C807C-4107-321D-AD10-934277A87E32}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
+		{019C807C-4107-321D-AD10-934277A87E32}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
+		{019C807C-4107-321D-AD10-934277A87E32}.Release|x64.ActiveCfg = Release|x64
+		{019C807C-4107-321D-AD10-934277A87E32}.Release|x64.Build.0 = Release|x64
+		{019C807C-4107-321D-AD10-934277A87E32}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{019C807C-4107-321D-AD10-934277A87E32}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
