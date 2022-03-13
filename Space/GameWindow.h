@@ -1,8 +1,9 @@
 #pragma once
 #include "WindowImplementation.h"
+#include "SpaceUtil.h"
 namespace Space
 {
-	class GameWindow
+	class GAME_API GameWindow
 	{
 	public:
 		static void Init();
