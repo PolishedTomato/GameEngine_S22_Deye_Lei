@@ -1,5 +1,5 @@
 #pragma once
-#include "GameWindow.h"
+#include "GWindows.h"
 
 #include "SpaceApp.h"
 

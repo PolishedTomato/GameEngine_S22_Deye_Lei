@@ -126,7 +126,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>PCHeader.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)Space;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -155,21 +155,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="GameWindow.h" />
-    <ClInclude Include="pch.h" />
+    <ClInclude Include="GWindows.h" />
+    <ClInclude Include="PCHeader.h" />
     <ClInclude Include="Space.h" />
     <ClInclude Include="SpaceApp.h" />
     <ClInclude Include="SpaceUtil.h" />
-    <ClInclude Include="specificGLFW\GlfwWindow.h" />
-    <ClInclude Include="WindowImplementation.h" />
+    <ClInclude Include="specificGLFW\GlfwWinWrapper.h" />
+    <ClInclude Include="WindowParent.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="GWindows.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SpaceApp.cpp" />
-    <ClCompile Include="specificGLFW\GlfwWindow.cpp" />
+    <ClCompile Include="specificGLFW\GlfwWinWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\glfw\build\src\glfw.vcxproj">

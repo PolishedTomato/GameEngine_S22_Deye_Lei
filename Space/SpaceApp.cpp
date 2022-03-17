@@ -1,8 +1,8 @@
-#include "pch.h"
+#include "PCHeader.h"
 //the precompile header file have to be place above
 #include "SpaceApp.h"
 
-#include "GameWindow.h"
+#include "GWindows.h"
 
 namespace Space
 {
@@ -10,15 +10,15 @@ namespace Space
 	{
 		GAME_LOG("Its running..\n");
 		
-		Space::GameWindow::Init();
-		Space::GameWindow::GetWindow()->CreateWindow(800, 600, "game window");
+		Space::GWindows::Init();
+		Space::GWindows::GetWindow()->CreateWindow(800, 600, "game window");
 
 		while (true)
 		{
 			OnUpdate();
 			
-			Space::GameWindow::GetWindow()->SwapBuffers();
-			Space::GameWindow::GetWindow()->CollectEvent();
+			Space::GWindows::GetWindow()->SwapBuffers();
+			Space::GWindows::GetWindow()->CollectEvent();
 		}
 		
 	}

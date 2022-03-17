@@ -1,13 +1,13 @@
 #pragma once
-#include "../WindowImplementation.h"
+#include "../WindowParent.h"
 #include "../../glfw/include/GLFW/glfw3.h"
 namespace Space
 {
-	class GlfwWindow : public WindowImplementation
+	class GlfwWinWrapper : public WindowParent
 	{
 	public:
-		GlfwWindow();
-		~GlfwWindow();
+		GlfwWinWrapper();
+		~GlfwWinWrapper();
 		virtual bool CreateWindow(int width, int height, const std::string& windowName) override;
 		virtual void SwapBuffers() override;
 		virtual void CollectEvent() override;

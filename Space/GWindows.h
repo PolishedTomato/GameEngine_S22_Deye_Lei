@@ -1,14 +1,14 @@
 #pragma once
-#include "WindowImplementation.h"
+#include "WindowParent.h"
 #include "SpaceUtil.h"
 namespace Space
 {
-	class GAME_API GameWindow
+	class GAME_API GWindows
 	{
 	public:
 		static void Init();
 		//static function will not attach to any class instance, and therefore can be call by itself to create first instance of this class
-		static GameWindow* GetWindow();
+		static GWindows* GetWindow();
 		//use to get the point to window object and access other memeber function
 
 		bool CreateWindow(int width, int height, const std::string& windowName);
@@ -21,13 +21,13 @@ namespace Space
 		int GetWindowHeight() const;
 
 	private:
-		inline static GameWindow* mInstance { nullptr };
+		inline static GWindows* mInstance { nullptr };
 		//in global scope
 		//c++ 17 or higher only
-		GameWindow();
+		GWindows();
 		//constructor in private to avoid standard declaration technique in c++
 
-		WindowImplementation* mWindow{ nullptr };
+		WindowParent* mWindow{ nullptr };
 		//a class that will inheir glfw class
 	};
 }

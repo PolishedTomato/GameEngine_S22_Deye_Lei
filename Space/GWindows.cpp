@@ -1,48 +1,48 @@
-#include "pch.h"
+#include "PCHeader.h"
 
-#include "GameWindow.h"
+#include "GWindows.h"
 
-#include "../Space/specificGLFW/GlfwWindow.h"
+#include "../Space/specificGLFW/GlfwWinWrapper.h"
 namespace Space 
 {
-	void GameWindow::Init()
+	void GWindows::Init()
 	{
 		if (mInstance == nullptr)
 		{
-			mInstance = new GameWindow;
+			mInstance = new GWindows;
 		}
 	}
-	GameWindow* GameWindow::GetWindow()
+	GWindows* GWindows::GetWindow()
 	{
 		assert(mInstance);
 		//assert is a macro, and thus can be remove when we dont need it for performent
 		return mInstance;
 	}
-	bool GameWindow::CreateWindow(int width, int height, const std::string& windowName)
+	bool GWindows::CreateWindow(int width, int height, const std::string& windowName)
 	{
 		return mWindow->CreateWindow(800, 600, "Spring 2022");
 		
 	}
-	void GameWindow::SwapBuffers()
+	void GWindows::SwapBuffers()
 	{
 		mWindow->SwapBuffers();
 	}
-	void GameWindow::CollectEvent()
+	void GWindows::CollectEvent()
 	{
 		mWindow->CollectEvent();
 	}
-	int GameWindow::GetWindowWidth() const
+	int GWindows::GetWindowWidth() const
 	{
 		return mWindow->GetWidth();
 	}
-	int GameWindow::GetWindowHeight() const
+	int GWindows::GetWindowHeight() const
 	{
 		return mWindow->GetHeight();
 	}
-	GameWindow::GameWindow()
+	GWindows::GWindows()
 	{
 	#ifdef Space_WINDOWS
-		mWindow = new GlfwWindow;
+		mWindow = new GlfwWinWrapper;
 	#elif defined Space_MACOS
 		mWindow = new GlfwWindow;
 	#elif defined Space_LINUX

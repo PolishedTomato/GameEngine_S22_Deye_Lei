@@ -1,8 +1,8 @@
 #pragma once
-#include "pch.h"
+#include "PCHeader.h"
 namespace Space
 {
-	class WindowImplementation
+	class WindowParent
 	{
 	public:
 		virtual bool CreateWindow(int width, int height, const std::string& windowName) = 0;

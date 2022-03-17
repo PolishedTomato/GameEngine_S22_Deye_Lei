@@ -24,16 +24,16 @@
     <ClInclude Include="SpaceUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
+    <ClInclude Include="PCHeader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameWindow.h">
+    <ClInclude Include="GWindows.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WindowImplementation.h">
+    <ClInclude Include="WindowParent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="specificGLFW\GlfwWindow.h">
+    <ClInclude Include="specificGLFW\GlfwWinWrapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,10 +44,10 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameWindow.cpp">
+    <ClCompile Include="GWindows.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="specificGLFW\GlfwWindow.cpp">
+    <ClCompile Include="specificGLFW\GlfwWinWrapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
