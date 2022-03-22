@@ -33,7 +33,7 @@
     <ClInclude Include="WindowParent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="specificGLFW\GlfwWinWrapper.h">
+    <ClInclude Include="GLFWwrapper\GlfwWinWrapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,13 +41,13 @@
     <ClCompile Include="SpaceApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="PCHeader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GWindows.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="specificGLFW\GlfwWinWrapper.cpp">
+    <ClCompile Include="GLFWwrapper\GlfwWinWrapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

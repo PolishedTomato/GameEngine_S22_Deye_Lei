@@ -160,16 +160,16 @@
     <ClInclude Include="Space.h" />
     <ClInclude Include="SpaceApp.h" />
     <ClInclude Include="SpaceUtil.h" />
-    <ClInclude Include="specificGLFW\GlfwWinWrapper.h" />
+    <ClInclude Include="GLFWwrapper\GlfwWinWrapper.h" />
     <ClInclude Include="WindowParent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GWindows.cpp" />
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="PCHeader.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SpaceApp.cpp" />
-    <ClCompile Include="specificGLFW\GlfwWinWrapper.cpp" />
+    <ClCompile Include="GLFWwrapper\GlfwWinWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\glfw\build\src\glfw.vcxproj">

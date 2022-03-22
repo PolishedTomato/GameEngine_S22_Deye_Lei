@@ -3,13 +3,13 @@ set(HEADER_FILES
 	SpaceApp.h 
 	SpaceUtil.h 
 	GWindows.h 
-	specificGLFW/GlfwWinWrapper.h 
+	GLFWwrapper/GlfwWinWrapper.h 
 	WindowParent.h
 	)
 
 set(SOURCE_FILES 
 	SpaceApp.cpp 
-	specificGLFW/GlfwWinWrapper.cpp 
+	GLFWwrapper/GlfwWinWrapper.cpp 
 	GWindows.cpp 
 	)
 	

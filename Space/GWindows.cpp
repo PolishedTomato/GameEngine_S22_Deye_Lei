@@ -2,7 +2,7 @@
 
 #include "GWindows.h"
 
-#include "../Space/specificGLFW/GlfwWinWrapper.h"
+#include "../Space/GLFWwrapper/GlfwWinWrapper.h"
 namespace Space 
 {
 	void GWindows::Init()
