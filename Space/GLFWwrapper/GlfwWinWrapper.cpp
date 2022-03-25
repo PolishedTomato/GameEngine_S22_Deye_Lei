@@ -30,6 +30,10 @@ namespace Space
 		}
 
 		glfwMakeContextCurrent(mGlfwWindow);
+		//make this mGLFwWindow our current drawing window
+
+		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+			GAME_LOG("Error, fail to initalize glad");
 		return true;
 	}
 	void GlfwWinWrapper::SwapBuffers()
