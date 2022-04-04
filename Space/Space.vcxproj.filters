@@ -36,6 +36,9 @@
     <ClInclude Include="GLFWwrapper\GlfwWinWrapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Pic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SpaceApp.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GLFWwrapper\GlfwWinWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

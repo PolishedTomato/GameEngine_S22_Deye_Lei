@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="GWindows.h" />
     <ClInclude Include="PCHeader.h" />
+    <ClInclude Include="Pic.h" />
     <ClInclude Include="Space.h" />
     <ClInclude Include="SpaceApp.h" />
     <ClInclude Include="SpaceUtil.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="PCHeader.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Pic.cpp" />
     <ClCompile Include="SpaceApp.cpp" />
     <ClCompile Include="GLFWwrapper\GlfwWinWrapper.cpp" />
   </ItemGroup>
