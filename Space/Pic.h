@@ -1,7 +1,8 @@
 #pragma once
-
+#include "SpaceUtil.h"
+#include "PicImplementation.h"
 namespace Space {
-	class Pic
+	class GAME_API Pic
 	{
 	public:
 		Pic(const std::string& filename);

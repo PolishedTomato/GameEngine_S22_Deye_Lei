@@ -4,7 +4,11 @@
 
 Space::Pic::Pic(const std::string& filename)
 {
-	P_Imp = new OpenGLWrapper;
+#ifdef OpenGL
+	P_Imp = new OpenGLWrapper{ filename };
+#else
+	#Only_OpenGL_is_supported_for_now
+#endif
 }
 
 int Space::Pic::GetWidth() const
