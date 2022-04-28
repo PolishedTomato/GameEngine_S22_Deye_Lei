@@ -7,11 +7,24 @@
 namespace Space {
 	Space::OpenGLWrapper::OpenGLWrapper(const std::string& file)
 	{
+
+		stbi_set_flip_vertically_on_load(true);
+
+		int numChannels;
+		unsigned char* data = stbi_load(file.c_str(), &mwidth, &mheight, &numChannels, 0);
+
+		if (data == NULL)
+		{
+			GAME_LOG("Error: texture didn't load");
+			assert(true);
+		}
+
+
 		float vertices[] = {
-			-0.5f, -0.5f,0.0f, 0.0f, //each line represent a coordinate in the window
-			-0.5f, 0.5f,0.0f, 1.0f,
-			0.5f, 0.5f,1.0f, 1.0f,
-			0.5f, -0.5f, 1.0f, 0.0f
+			0.0f,			0.0f,				0.0f, 0.0f, //each line represent a coordinate in the window
+			0.0f,			(float)mheight,     0.0f, 1.0f,
+			(float)mwidth,  (float)mheight,     1.0f, 1.0f,
+			(float)mwidth,  0.0f,				1.0f, 0.0f
 		};
 
 		unsigned indices[] = {
@@ -53,16 +66,9 @@ namespace Space {
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-		stbi_set_flip_vertically_on_load(true);
-
-		int numChannels;
-		unsigned char* data = stbi_load(file.c_str(), &mwidth, &mheight, &numChannels, 0);
-
-		if (data == NULL)
-		{
-			GAME_LOG("Error: texture didn't load");
-		}
-
+		
+		//somehow using GL_RGB instead of GL_RGBA will allow me to not run to error
+		//seems like GL_RGBA for png, GL_RGB for jpg
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, mwidth, mheight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
 
