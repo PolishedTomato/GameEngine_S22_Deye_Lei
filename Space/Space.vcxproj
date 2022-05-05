@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GWindows.h" />
+    <ClInclude Include="KeyEvent.h" />
     <ClInclude Include="MyShader.h" />
     <ClInclude Include="MyShaderImplementation.h" />
     <ClInclude Include="OpenGLWrapper\MOpenGLShader.h" />
@@ -174,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GWindows.cpp" />
+    <ClCompile Include="KeyEvent.cpp" />
     <ClCompile Include="MyShader.cpp" />
     <ClCompile Include="OpenGLWrapper\MOpenGLShader.cpp" />
     <ClCompile Include="OpenGLWrapper\OpenGLPic_Renderer.cpp" />

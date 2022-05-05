@@ -5,6 +5,10 @@
 namespace Space {
     MOpenGLShader::MOpenGLShader(const std::string& vertexFile, const std::string& fragmentFile)
     {
+        //this code avoid exception
+        gladLoadGL();
+        //
+
         unsigned int VertexShader;
         VertexShader = glCreateShader(GL_VERTEX_SHADER);
         //FILE READING//

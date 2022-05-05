@@ -3,7 +3,7 @@
 #include "SpaceApp.h"
 
 #include "GWindows.h"
-#include "glad/glad.h"
+//#include "glad/glad.h"
 #include "Pic.h"
 #include "MyShader.h"
 #include "Pic_Renderer.h"
@@ -18,23 +18,31 @@ namespace Space
 		Space::GWindows::GetWindow()->CreateWindow(800, 600, "game window");//size of the window
 		
 		////////this one fix the exception throw by glad
-		gladLoadGL();
-		//
+		//gladLoadGL();
+		//was moved into MOpenGLShader class initalization
 
 		Pic_Renderer::init();
 
 		Space::Pic star{"../Space/My_things/Images/B.png"};
+		int xPos{ -star.GetWidth() };
+
+		mNextFrameTime = std::chrono::steady_clock::now() + mframeDuration;
+
 		while (true)
 		{
 			OnUpdate();
-			
-			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-			glClear(GL_COLOR_BUFFER_BIT);
 
-			Pic_Renderer::Draw(star,50, 20, 1.0);
+			Pic_Renderer::ClearScreen();
+
+			Pic_Renderer::Draw(star,xPos, 100, 1);//draw picture in the buffer
+			xPos = (xPos + 5);
+
+			std::this_thread::sleep_until(mNextFrameTime);
 
 			Space::GWindows::GetWindow()->SwapBuffers();
 			Space::GWindows::GetWindow()->CollectEvent();
+
+			mNextFrameTime += mframeDuration;
 		}
 		
 	}

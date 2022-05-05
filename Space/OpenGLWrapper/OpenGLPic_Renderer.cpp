@@ -21,4 +21,9 @@ namespace Space {
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 	}
+	void OpenGLPic_Renderer::ClearScreen()
+	{
+		glClearColor(0.0f, 0.0, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+	}
 }

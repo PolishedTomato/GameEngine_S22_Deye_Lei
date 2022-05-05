@@ -1,3 +1,4 @@
+#pragma once
 #include "PCHeader.h"
 
 #include "GlfwWinWrapper.h"
@@ -30,6 +31,11 @@ namespace Space
 		}
 
 		glfwMakeContextCurrent(mGlfwWindow);
+		glfwSwapInterval(1);
+
+		//if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+			//GAME_LOG("ERROR:GLAD failed to initiualize");
+
 		return true;
 	}
 	void GlfwWinWrapper::SwapBuffers()

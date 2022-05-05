@@ -18,6 +18,11 @@ namespace Space{
 		mInstance->mImplementation->Draw(Picture, xPos, yPos, zPos, mInstance->mShader);
 	}
 
+	void Pic_Renderer::ClearScreen()
+	{
+		mInstance->mImplementation->ClearScreen();
+	}
+
 	Pic_Renderer::Pic_Renderer():mShader("../Space/My_things/Shaders_codes/defaultVertexShader.glsl", 
 		"../Space/My_things/Shaders_codes/defaultFragmentShader.glsl")
 	{
