@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GWindows.h" />
+    <ClInclude Include="KeyCodeDef.h" />
     <ClInclude Include="KeyEvent.h" />
     <ClInclude Include="MyShader.h" />
     <ClInclude Include="MyShaderImplementation.h" />

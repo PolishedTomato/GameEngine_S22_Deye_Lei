@@ -8,6 +8,7 @@
 #include "Pic.h"
 #include "MyShader.h"
 #include "Pic_Renderer.h"
+#include "KeyCodeDef.h"
 
 #define GAME_AIRPLICATION_START(classname) \
 \

@@ -66,6 +66,9 @@
     <ClInclude Include="KeyEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="KeyCodeDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SpaceApp.cpp">

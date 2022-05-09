@@ -1,6 +1,7 @@
 #pragma once
 #include "WindowParent.h"
 #include "SpaceUtil.h"
+#include "KeyEvent.h"
 namespace Space
 {
 	class GAME_API GWindows
@@ -19,6 +20,9 @@ namespace Space
 
 		int GetWindowWidth() const;
 		int GetWindowHeight() const;
+
+		void SetKeyPressCallBack(const std::function<void(const KeyPEvent&)>& KeyPCallBack);
+		void SetKeyReleaseCallBack(const std::function<void(const KeyREvent&)>& KeyRCallBack);
 
 	private:
 		inline static GWindows* mInstance { nullptr };

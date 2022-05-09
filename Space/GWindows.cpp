@@ -39,6 +39,14 @@ namespace Space
 	{
 		return mWindow->GetHeight();
 	}
+	void GWindows::SetKeyPressCallBack(const std::function<void(const KeyPEvent&)>& KeyPCallBack)
+	{
+		mWindow->SetKeyPressCallBack(KeyPCallBack);
+	}
+	void GWindows::SetKeyReleaseCallBack(const std::function<void(const KeyREvent&)>& KeyRCallBack)
+	{
+		mWindow->SetKeyReleaseCallBack(KeyRCallBack);
+	}
 	GWindows::GWindows()
 	{
 	#ifdef Space_WINDOWS
