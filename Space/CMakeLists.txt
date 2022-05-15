@@ -14,6 +14,8 @@ set(HEADER_FILES
 	Pic_Renderer.h
 	Pic_Render_Implementation.h
 	OpenGLWrapper/OpenGLPic_Renderer.h
+	KeyEvent.h
+	KeyCodeDef.h
 	)
 
 set(SOURCE_FILES 
@@ -26,6 +28,7 @@ set(SOURCE_FILES
 	OpenGLWrapper/MOpenGLShader.cpp
 	Pic_Renderer.cpp
 	OpenGLWrapper/OpenGLPic_Renderer.cpp 
+	KeyEvent.cpp
 	)
 	
 add_library(Space SHARED ${HEADER_FILES} ${SOURCE_FILES})

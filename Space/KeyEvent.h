@@ -1,6 +1,7 @@
 #pragma once
+#include "SpaceUtil.h"
 namespace Space {
-	class KeyPEvent
+	class GAME_API KeyPEvent
 	{
 	public:
 		KeyPEvent(int codeOfKey);
@@ -10,7 +11,7 @@ namespace Space {
 		int mKeyCode;
 	};
 
-	class KeyREvent
+	class GAME_API KeyREvent
 	{
 	public:
 		KeyREvent(int codeOfKey);
@@ -21,4 +22,4 @@ namespace Space {
 	};
 
 }
-
+                                                                                                                                                                                                                                                                                                                                                                            

@@ -9,6 +9,7 @@
 #include "MyShader.h"
 #include "Pic_Renderer.h"
 #include "KeyCodeDef.h"
+#include "KeyEvent.h"
 
 #define GAME_AIRPLICATION_START(classname) \
 \

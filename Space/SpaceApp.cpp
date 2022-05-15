@@ -28,6 +28,7 @@ namespace Space
 		Pic_Renderer::init();
 
 		Space::Pic star{"../Space/My_things/Images/B.png"};
+		Space::Pic B2{ "../Space/My_things/Images/A.png" };
 		int xPos{ -star.GetWidth() };
 
 		mNextFrameTime = std::chrono::steady_clock::now() + mframeDuration;
@@ -46,8 +47,12 @@ namespace Space
 			OnUpdate();
 
 			Pic_Renderer::ClearScreen();
-
+			
+			//z coordinate seem don't work, for a pic to be on top of others
+			// the one should be in the last draw function call.
+			Pic_Renderer::Draw(B2, 100, 100, 0);//draw picture in the buffer
 			Pic_Renderer::Draw(star,x, y, 1);//draw picture in the buffer
+			
 
 			std::this_thread::sleep_until(mNextFrameTime);
 

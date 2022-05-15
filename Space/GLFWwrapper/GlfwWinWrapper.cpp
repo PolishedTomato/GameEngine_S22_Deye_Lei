@@ -1,9 +1,10 @@
 #pragma once
 #include "PCHeader.h"
-
+#include "glad/glad.h"
 #include "GlfwWinWrapper.h"
 #include "../SpaceUtil.h"
 #include "KeyEvent.h"
+
 namespace Space
 {
 	GlfwWinWrapper::GlfwWinWrapper()
@@ -33,8 +34,8 @@ namespace Space
 		glfwMakeContextCurrent(mGlfwWindow);
 		glfwSwapInterval(1);//delay buffer swap until the next buffer is ready
 
-		//if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-			//GAME_LOG("ERROR:GLAD failed to initiualize");
+		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+			GAME_LOG("ERROR:GLAD failed to initiualize");
 
 		//user pointer to mGlfwWindow point to our call back
 		glfwSetWindowUserPointer(mGlfwWindow, &mCallbacks);
