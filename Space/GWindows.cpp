@@ -47,6 +47,14 @@ namespace Space
 	{
 		mWindow->SetKeyReleaseCallBack(KeyRCallBack);
 	}
+	bool GWindows::WindowShouldClose()
+	{
+		return mWindow->WindowShouldClose();
+	}
+	bool GWindows::WindowShouldClose(bool close)
+	{
+		return mWindow->WindowShouldClose(close);
+	}
 	GWindows::GWindows()
 	{
 	#ifdef Space_WINDOWS

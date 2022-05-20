@@ -14,5 +14,8 @@ namespace Space
 
 		virtual void SetKeyPressCallBack(const std::function<void(const KeyPEvent&)>& KeyPCallBack) = 0;
 		virtual void SetKeyReleaseCallBack(const std::function<void(const KeyREvent&)>& KeyRCallBack) = 0;
+
+		virtual bool WindowShouldClose() = 0;
+		virtual bool WindowShouldClose(bool close) = 0;
 	};
 }

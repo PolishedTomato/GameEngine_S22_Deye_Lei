@@ -1,33 +1,27 @@
 #pragma once
 #include "../Space/Pic.h"
 #include "vector"
+#include "../Space/Space.h"
 class Game_Unit
 {
 public:
-	Game_Unit(const std::vector<std::string>& filenames);
+	//Game_Unit(const std::vector<std::string>& filenames);//for continious movement, take multiple sprike
+	virtual int GetX() const = 0;
+	virtual int GetY() const = 0;
+	virtual int GetZ() const = 0;
+	virtual bool GetMoveable() const =0;
 
-	int GetX() const;
-	int GetY() const;
-	int GetZ() const;
-	bool GetSolid() const;
-	int GetImageIndex()const;
-	int GetWidth() const;
-	int GetHeight() const;
+	virtual int GetWidth() const =0;
+	virtual int GetHeight() const = 0;
 
-	void SetX(int newX);
-	void SetY(int newY);
-	void SetZ(int newZ);
-	void SetSolid(bool newSolid);
-	void SetActiveimage(int newActiveImage);
+	virtual void SetX(int newX) = 0;
+	virtual void SetY(int newY) = 0;
+	virtual void SetZ(int newZ) = 0;
 
-	void Draw();
-private:
-	int mXPos{ 0 };
-	int mYPos{ 0 };
-	int mZpos{ 0 };
+	virtual void SetMoveable(bool newSolid) = 0;
+	
+	//void SetActiveimage(int newActiveImage);
 
-	bool mSolid{ true };
-	int mActiveImage{ 0 };
-	std::vector<Space::Pic> mImage;
+	virtual void Draw() = 0;
 };
 

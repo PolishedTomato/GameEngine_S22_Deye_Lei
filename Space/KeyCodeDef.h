@@ -1,7 +1,5 @@
 #pragma once
 
-#ifdef Space_WINDOWS or defined Space_MACOS or defined Space_LINUX
-
 #define Space_KEY_SPACE              32
 #define Space_KEY_APOSTROPHE         39  /* ' */
 #define Space_KEY_COMMA              44  /* , */
@@ -127,6 +125,3 @@
 
 #define Space_KEY_LAST               Space_KEY_MENU
 
-#else
-
-#endif 

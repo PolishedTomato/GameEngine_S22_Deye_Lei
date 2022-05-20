@@ -7,7 +7,7 @@ namespace Space {
 
 	}
 
-	int KeyPEvent::GetKeyCode()
+	int KeyPEvent::GetKeyCode() const
 	{
 		return mKeyCode;
 	}
@@ -16,7 +16,7 @@ namespace Space {
 	{
 	}
 
-	int KeyREvent::GetKeyCode()
+	int KeyREvent::GetKeyCode() const
 	{
 		return mKeyCode;
 	}

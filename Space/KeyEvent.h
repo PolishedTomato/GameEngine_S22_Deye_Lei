@@ -6,7 +6,7 @@ namespace Space {
 	public:
 		KeyPEvent(int codeOfKey);
 		KeyPEvent() = delete;
-		int GetKeyCode();
+		int GetKeyCode() const;
 	private:
 		int mKeyCode;
 	};
@@ -16,7 +16,7 @@ namespace Space {
 	public:
 		KeyREvent(int codeOfKey);
 		KeyREvent() = delete;
-		int GetKeyCode();
+		int GetKeyCode() const;
 	private:
 		int mKeyCode;
 	};

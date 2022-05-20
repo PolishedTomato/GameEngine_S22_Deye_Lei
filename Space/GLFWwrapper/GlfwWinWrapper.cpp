@@ -37,10 +37,17 @@ namespace Space
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 			GAME_LOG("ERROR:GLAD failed to initiualize");
 
+		//setting viewport in pixel 0,0 at the bottom left
+		//the ratio on width and height have to be same otherwise, display port will make
+		//spirt with distorted size
+		//glViewport(0, 0, GetWidth()*2,GetHeight()*2);
+
 		//user pointer to mGlfwWindow point to our call back
 		glfwSetWindowUserPointer(mGlfwWindow, &mCallbacks);
 		//the lambda function is a wrapper that must use for implemente call back
 		//we can use its parameters to know which key was pressed and what action performened
+		//everytime a key is pressed, it will be called, and it will call the KekPressedCallback
+		//we have supplied.
 		glfwSetKeyCallback(mGlfwWindow, [](GLFWwindow* window, int key, int scancode, int action, int mods)
 			{
 
@@ -94,5 +101,18 @@ namespace Space
 	{
 		mCallbacks.KeyReleaseCallback = KeyRCallBack;
 
+	}
+	bool GlfwWinWrapper::WindowShouldClose()
+	{
+		return glfwWindowShouldClose(mGlfwWindow);
+	}
+	bool GlfwWinWrapper::WindowShouldClose(bool close)
+	{
+		if (close == true)
+		{
+			glfwSetWindowShouldClose(mGlfwWindow, true);
+			return true;
+		}
+		return false;
 	}
 }

@@ -12,7 +12,7 @@ namespace Space {
 		shader.Bind();
 		Picture.Bind();
 
-		//size of display window
+		//size of display window, the pixel distribution
 		shader.SetUniform2Ints("windowSize", winWidth, winHeight);
 		//setting this will use the shader program to calculate relative position
 		shader.SetUniform3Ints("spriteCoord", xPos, yPos, zPos);
@@ -23,7 +23,7 @@ namespace Space {
 	}
 	void OpenGLPic_Renderer::ClearScreen()
 	{
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+		glClearColor(255.0f, 255.0f, 255.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 	}
 }

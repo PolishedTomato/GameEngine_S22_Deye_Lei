@@ -24,6 +24,8 @@ namespace Space
 		void SetKeyPressCallBack(const std::function<void(const KeyPEvent&)>& KeyPCallBack);
 		void SetKeyReleaseCallBack(const std::function<void(const KeyREvent&)>& KeyRCallBack);
 
+		bool WindowShouldClose();
+		bool WindowShouldClose(bool close);
 	private:
 		inline static GWindows* mInstance { nullptr };
 		//in global scope

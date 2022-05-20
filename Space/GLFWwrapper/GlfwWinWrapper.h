@@ -17,6 +17,9 @@ namespace Space
 
 		virtual void SetKeyPressCallBack(const std::function<void(const KeyPEvent&)>& KeyPCallBack) override;
 		virtual void SetKeyReleaseCallBack(const std::function<void(const KeyREvent&)>& KeyRCallBack) override;
+
+		virtual bool WindowShouldClose() override;
+		virtual bool WindowShouldClose(bool close) override;
 	private:
 		struct Callbacks
 		{
