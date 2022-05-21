@@ -19,6 +19,9 @@ public:
     virtual void SetZ(int newZ) override;
 
     virtual void SetMoveable(bool newSolid) override;
+    
+    void SetDisappear(bool newV);
+    bool GetDisappear();
 
 private:
     Space::Pic Images;

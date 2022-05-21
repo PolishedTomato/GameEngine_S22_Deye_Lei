@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="InMoveableUnit.cpp" />
+    <ClCompile Include="InMoveableUnitMShape.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MoveableUnit.cpp" />
     <ClCompile Include="SpringGameG22App.cpp" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="Game_Unit.h" />
     <ClInclude Include="InMoveableUnit.h" />
+    <ClInclude Include="InMoveableUnitMShape.h" />
     <ClInclude Include="MoveableUnit.h" />
     <ClInclude Include="SpringGameG22App.h" />
   </ItemGroup>

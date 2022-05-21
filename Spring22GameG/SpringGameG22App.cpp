@@ -64,13 +64,19 @@ springApp::springApp()
 		}
 		});
 
-	
+	//locations 
 
 	Immovables[0].SetX(300);
 	Immovables[0].SetY(300);
 	
 	Immovables[1].SetX(1150);
 	Immovables[1].SetY(300);
+
+	Counter.SetX(300);
+	Counter.SetY(300);
+
+	Complete.SetX(1150);
+	Complete.SetY(300);
 
 	Enermy[0].SetX(0);
 	Enermy[0].SetY(1200);
@@ -80,16 +86,30 @@ springApp::springApp()
 	Enermy[1].SetY(0);
 	Enermy[1].SetActivemovement(up);
 
-	
+	Coins[0].SetX(0);
+	Coins[0].SetY(1350);
+
+	Coins[1].SetX(1800);
+	Coins[1].SetY(1350);
+
+	Coins[2].SetX(1800);
+	Coins[2].SetY(0);
+
+	Coins[3].SetX(1800);
+	Coins[3].SetY(750);
+
+	Coins[4].SetX(950);
+	Coins[4].SetY(750);
+
+	Coins[5].SetX(950);
+	Coins[5].SetY(1350);
+
+	Coins[6].SetX(950);
+	Coins[6].SetY(0);
 }
 
 void springApp::OnUpdate()
 {
-	/*
-	ISoundEngine* SoundEngine = createIrrKlangDevice();
-
-	SoundEngine->play2D("media/bell.wav", true);
-	*/
 	//prevent hero go out of window
 	if ((mHero.GetX() + mHorizontalSpeed) >= 0 && 
 		(mHero.GetX() + mHorizontalSpeed+mHero.GetWidth() <= Space::GWindows::GetWindow()->GetWindowWidth()))
@@ -103,12 +123,6 @@ void springApp::OnUpdate()
 		mHero.SetY(mHero.GetY() + mVerticalSpeed);
 	}
 
-	/*if (Enermys[0].GetY() < 0)
-		mEnermySpeed *= -1;
-	else if (Enermys[0].GetY() > Space::GWindows::GetWindow()->GetWindowHeight())
-		mEnermySpeed *= -1;
-	Enermys[0].SetY(Enermys[0].GetY() + mEnermySpeed);
-	*/
 	for (int i = 0; i < Immovables.size(); i++)
 	{
 		if (Collide(mHero, Immovables[i]))//if collide reverse update poistion
@@ -125,7 +139,7 @@ void springApp::OnUpdate()
 	{
 		EnermyPath(Enermy[i],Enermy[i].GetActivemovement());
 	}
-
+	//enermy collide
 	for (int i = 0; i < Enermy.size(); i++)
 	{
 		if (Collide(mHero, Enermy[i]))//if collide reverse update poistion
@@ -139,11 +153,37 @@ void springApp::OnUpdate()
 			Space::GWindows::GetWindow()->WindowShouldClose(true);
 		}
 	}
+
+	//coin collide
+	for (int i = 0; i < Coins.size(); i++)
+	{
+		if (Collide(mHero, Coins[i]))
+		{
+			Coins[i].SetDisappear(true);
+			SoundEngine->play2D("media/GetGoodItem.mp3", false);
+			CoinCollected++;
+			Counter.SetActiveImage(CoinCollected);
+			if (CoinCollected == 7)
+			{
+				SoundEngine->play2D("media/tada-fanfare-a-6313.mp3", false);
+				GAME_LOG("Congratulations, you beat the game!");
+			}
+		}
+	}
 	mHero.Draw();
 	Immovables[0].Draw();
 	Immovables[1].Draw();
 	Enermy[0].Draw();
 	Enermy[1].Draw();
+	for (int i = 0; i < Coins.size(); i++)
+	{
+		Coins[i].Draw();
+	}
+	Counter.Draw();
+	if (CoinCollected == 7)
+	{
+		Complete.Draw();
+	}
 }
 
 bool springApp::Collide(const Game_Unit& one, const Game_Unit& two)

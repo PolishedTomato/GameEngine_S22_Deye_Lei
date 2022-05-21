@@ -63,3 +63,19 @@ void InMoveableUnit::SetMoveable(bool newSolid)
 {
 	mMoveable = newSolid;
 }
+
+void InMoveableUnit::SetDisappear(bool newV)
+{
+	disapear = newV;
+	if (disapear = true)//move out of screen
+	{
+		mXPos = -500;
+		mYPos = -500;
+		mZpos = -500;
+	}
+}
+
+bool InMoveableUnit::GetDisappear()
+{
+	return disapear;
+}
