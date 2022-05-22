@@ -45,3 +45,8 @@ include_directories(../stblib)
 target_precompile_headers(Space PRIVATE PCHeader.h)
 
 target_link_libraries(Space glfw glad stblib)
+
+file(COPY My_things DESTINATION ${PROJECT_BINARY_DIR}/Space)
+file(COPY My_things DESTINATION ${PROJECT_BINARY_DIR}/Debug)
+file(COPY My_things DESTINATION ${PROJECT_BINARY_DIR}/Release)
+

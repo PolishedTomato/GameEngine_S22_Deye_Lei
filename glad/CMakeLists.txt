@@ -1,4 +1,4 @@
-add_library(glad SHARED src/glad.c)
+add_library(glad STATIC src/glad.c)
 
 
 include_directories(../glad/include)

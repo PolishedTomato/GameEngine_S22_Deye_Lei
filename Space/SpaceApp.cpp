@@ -12,8 +12,8 @@
 #include "KeyCodeDef.h"
 
 #include "../glfw/include/GLFW/glfw3.h"
-#include "../Spring22GameG/IrrKlang/irrKlang.h"
-using namespace irrklang;
+//#include "../Spring22GameG/IrrKlang/irrKlang.h"
+//using namespace irrklang;
 
 
 namespace Space
@@ -31,19 +31,19 @@ namespace Space
 
 		Pic_Renderer::init();
 		//initalize sound device
-		SoundEngine = createIrrKlangDevice();
+		//SoundEngine = createIrrKlangDevice();
 	}
 
 	void SpaceApp::Run()
 	{
 		mNextFrameTime = std::chrono::steady_clock::now() + mframeDuration;
 		
-		SoundEngine->play2D("../Spring22GameG/media/Calm-and-Peaceful.mp3", true);
+		//SoundEngine->play2D("../Spring22GameG/media/Calm-and-Peaceful.mp3", true);
 
 		while (!GWindows::GetWindow()->WindowShouldClose())
 		{
 			Pic_Renderer::ClearScreen();
-			
+
 			OnUpdate();
 
 			std::this_thread::sleep_until(mNextFrameTime);
