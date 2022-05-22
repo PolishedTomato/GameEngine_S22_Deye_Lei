@@ -1,0 +1,7 @@
+1 Hero can't go out of screen
+2 User can close the game window by pressing x on the top right corner of the window
+3 Implemented Moveable class which allow hero or enermy to move with continuous movement change, and stopping image on different direction.
+4 New enermy logic in enermypath()
+5 Implemented InMoveable class for wall, coin objects, and implement new collide logic for walls and hero, and coin and hero.
+6 Implemented InMoveableMShape class for counter for coin collected
+7 Added a finish note when all coin are collected
