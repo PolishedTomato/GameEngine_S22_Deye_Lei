@@ -44,9 +44,10 @@ include_directories(../stblib)
 
 target_precompile_headers(Space PRIVATE PCHeader.h)
 
-target_link_libraries(Space glfw glad stblib)
+target_link_libraries(Space glfw glad stblib irrKlang.lib)
 
 file(COPY My_things DESTINATION ${PROJECT_BINARY_DIR}/Space)
 file(COPY My_things DESTINATION ${PROJECT_BINARY_DIR}/Debug)
 file(COPY My_things DESTINATION ${PROJECT_BINARY_DIR}/Release)
 
+file(COPY irrKlang.lib DESTINATION ${PROJECT_BINARY_DIR}/Space)

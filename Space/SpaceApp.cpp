@@ -1,7 +1,6 @@
 #include "PCHeader.h"
 //the precompile header file have to be place above
 #include "SpaceApp.h"
-
 #include "GWindows.h"
 //#include "glad/glad.h"
 #include "Pic.h"
@@ -12,9 +11,6 @@
 #include "KeyCodeDef.h"
 
 #include "../glfw/include/GLFW/glfw3.h"
-//#include "../Spring22GameG/IrrKlang/irrKlang.h"
-//using namespace irrklang;
-
 
 namespace Space
 {
@@ -31,14 +27,14 @@ namespace Space
 
 		Pic_Renderer::init();
 		//initalize sound device
-		//SoundEngine = createIrrKlangDevice();
+		SoundEngine = createIrrKlangDevice();
 	}
 
 	void SpaceApp::Run()
 	{
 		mNextFrameTime = std::chrono::steady_clock::now() + mframeDuration;
 		
-		//SoundEngine->play2D("../Spring22GameG/media/Calm-and-Peaceful.mp3", true);
+		SoundEngine->play2D("../Spring22GameG/media/Calm-and-Peaceful.mp3", true);
 
 		while (!GWindows::GetWindow()->WindowShouldClose())
 		{

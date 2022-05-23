@@ -127,11 +127,9 @@ void springApp::OnUpdate()
 	{
 		if (Collide(mHero, Immovables[i]))//if collide reverse update poistion
 		{
-			//std::cout << "Collide" << std::endl;
 			mHero.SetX(mHero.GetX() - mHorizontalSpeed);
 			mHero.SetY(mHero.GetY() - mVerticalSpeed);
-			//SoundEngine->play2D("media/bell.wav", false);
-			
+			SoundEngine->play2D("media/bell.wav", false);
 		}
 	}
 	
@@ -144,7 +142,7 @@ void springApp::OnUpdate()
 	{
 		if (Collide(mHero, Enermy[i]))//if collide reverse update poistion
 		{
-			//SoundEngine->play2D("media/explosion.wav", false);
+			SoundEngine->play2D("media/explosion.wav", false);
 			GAME_LOG("PLAYER LOSE");
 			//sleep for 1 sec then close
 			std::chrono::seconds SleepTime(1);
@@ -160,12 +158,12 @@ void springApp::OnUpdate()
 		if (Collide(mHero, Coins[i]))
 		{
 			Coins[i].SetDisappear(true);
-			//SoundEngine->play2D("media/GetGoodItem.mp3", false);
+			SoundEngine->play2D("media/GetGoodItem.mp3", false);
 			CoinCollected++;
 			Counter.SetActiveImage(CoinCollected);
 			if (CoinCollected == 7)
 			{
-				//SoundEngine->play2D("media/tada-fanfare-a-6313.mp3", false);
+				SoundEngine->play2D("media/tada-fanfare-a-6313.mp3", false);
 				GAME_LOG("Congratulations, you beat the game!");
 			}
 		}
