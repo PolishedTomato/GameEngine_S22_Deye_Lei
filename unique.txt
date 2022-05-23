@@ -5,3 +5,4 @@
 5 Implemented InMoveable class for wall, coin objects, and implement new collide logic for walls and hero, and coin and hero.
 6 Implemented InMoveableMShape class for counter for coin collected
 7 Added a finish note when all coin are collected
+8 Background sound, mhero collide wall, enermy, coin sounds effect added, celebration sounds when all coins are collected added. 
