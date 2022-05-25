@@ -26,6 +26,7 @@ namespace Space
 		//was moved into MOpenGLShader class initalization
 
 		Pic_Renderer::init();
+		
 		//initalize sound device
 		SoundEngine = createIrrKlangDevice();
 	}

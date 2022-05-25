@@ -5,10 +5,10 @@
 #include "InMoveableUnit.h"
 #include "InMoveableUnitMShape.h"
 //when we use the namespace, we need to add namespace prefix before GameApp
-class springApp : public Space::SpaceApp
+class SpringGameG22App : public Space::SpaceApp
 {
 public:
-	springApp();
+	SpringGameG22App();
 
 	virtual void OnUpdate() override;
 

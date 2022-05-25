@@ -4,7 +4,7 @@
 using namespace irrklang;
 
 
-springApp::springApp()
+SpringGameG22App::SpringGameG22App()
 {
 	SetKeyPressCallBack([this](const Space::KeyPEvent& e) {
 		switch (e.GetKeyCode())
@@ -64,7 +64,7 @@ springApp::springApp()
 		}
 		});
 
-	//locations 
+	//setting initial locations 
 
 	Immovables[0].SetX(300);
 	Immovables[0].SetY(300);
@@ -108,7 +108,7 @@ springApp::springApp()
 	Coins[6].SetY(0);
 }
 
-void springApp::OnUpdate()
+void SpringGameG22App::OnUpdate()
 {
 	//prevent hero go out of window
 	if ((mHero.GetX() + mHorizontalSpeed) >= 0 && 
@@ -123,6 +123,7 @@ void springApp::OnUpdate()
 		mHero.SetY(mHero.GetY() + mVerticalSpeed);
 	}
 
+	//wall collide
 	for (int i = 0; i < Immovables.size(); i++)
 	{
 		if (Collide(mHero, Immovables[i]))//if collide reverse update poistion
@@ -132,11 +133,7 @@ void springApp::OnUpdate()
 			SoundEngine->play2D("media/bell.wav", false);
 		}
 	}
-	
-	for (int i = 0; i < Enermy.size(); i++)
-	{
-		EnermyPath(Enermy[i],Enermy[i].GetActivemovement());
-	}
+
 	//enermy collide
 	for (int i = 0; i < Enermy.size(); i++)
 	{
@@ -150,6 +147,12 @@ void springApp::OnUpdate()
 
 			Space::GWindows::GetWindow()->WindowShouldClose(true);
 		}
+	}
+
+	//Enermy xpos, ypos, zpos update
+	for (int i = 0; i < Enermy.size(); i++)
+	{
+		EnermyPath(Enermy[i], Enermy[i].GetActivemovement());
 	}
 
 	//coin collide
@@ -168,6 +171,8 @@ void springApp::OnUpdate()
 			}
 		}
 	}
+
+	//Draws
 	mHero.Draw();
 	Immovables[0].Draw();
 	Immovables[1].Draw();
@@ -184,7 +189,7 @@ void springApp::OnUpdate()
 	}
 }
 
-bool springApp::Collide(const Game_Unit& one, const Game_Unit& two)
+bool SpringGameG22App::Collide(const Game_Unit& one, const Game_Unit& two)
 {
 	int oneLeft{ one.GetX() };
 	int oneRight{ one.GetX() + one.GetWidth() };
@@ -210,7 +215,7 @@ bool springApp::Collide(const Game_Unit& one, const Game_Unit& two)
 
 }
 
-void springApp::EnermyPath(MoveableUnit& Enermy, int dir)
+void SpringGameG22App::EnermyPath(MoveableUnit& Enermy, int dir)
 {
 	int nextXPos = Enermy.GetX();
 	int nextYPos = Enermy.GetY();
