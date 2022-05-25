@@ -3,6 +3,6 @@
 3 Implemented Moveable class which allow hero or enermy to move with continuous movement change, and stopping image on different direction.
 4 New enermy logic in enermypath()
 5 Implemented InMoveable class for wall, coin objects, and implement new collide logic for walls and hero, and coin and hero.
-6 Implemented InMoveableMShape class for counter for coin collected
+6 Implemented InMoveableMShape class for counter for coin collection.
 7 Added a finish note when all coin are collected
 8 Background sound, mhero collide wall, enermy, coin sounds effect added, celebration sounds when all coins are collected added. 
